@@ -7,8 +7,10 @@
   <p>home page</p>
   <p>home page</p>
   <div>
-    <BaseButton/>
-    <BaseButton style="margin-left: 10px" class="disabled"/>
+    <BaseButton class="danger" text="danger"/>
+    <BaseButton style="margin-left: 10px" class="primary" text="primary"/>
+    <BaseButton style="margin-left: 10px" class="warn" text="warn"/>
+    <BaseButton style="margin-left: 10px" class="disabled" text="disabled"/>
   </div>
   <p>home page</p>
   <p>home page</p>

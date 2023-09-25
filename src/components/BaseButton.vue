@@ -1,10 +1,15 @@
 <template>
   <button class="base-button" :style="buttonStyle">
-    Click here
+    {{ text }}
   </button>
 </template>
 
 <script>
+export default {
+  props: {
+    text: String,
+  }
+}
 </script>
 
 <style>
@@ -21,16 +26,30 @@
 
 .base-button:hover {
   background-color: lightblue;
+  color:black;
   transform: scale(1.05);
 }
 
 .base-button:focus {
   outline: 2px solid lightblue;
+  color:black;
   outline-offset: 2px;
 }
 
 .disabled {
   background-color: rgb(128, 128, 128);
   cursor: not-allowed !important;
+}
+.primary{
+  background-color: green;
+  color:white;
+}
+.warn{
+  background-color: orange;
+  color:black;
+}
+.danger{
+  background-color: red;
+  color:white;
 }
 </style>
