@@ -1,8 +1,7 @@
 <template>
-    <BaseLayout @userChanged="uchanged">
+    <BaseLayout>
     <home-page />
     </BaseLayout>
-  <home-page />
 </template>
 
 <script>
@@ -14,22 +13,6 @@ export default {
   components: {
     BaseLayout,
     HomePage
-  },
-  methods:{
-    uchanged(data){
-      this.user=data;
-      this.$emit('userChanged',data);
-    }
-  },
-  data() {
-    return {
-      user:null,
-    }
-  },
-  provide() {
-    return {
-      user: this.user,
-    };
   }
 }
 </script>

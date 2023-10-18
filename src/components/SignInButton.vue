@@ -4,6 +4,7 @@
 <script>
 import BaseButton from "@/components/BaseButton.vue";
 import {getLastUser, signInAndGetUser} from "@/lib/microsoftGraph";
+import { useStore } from 'vuex';
 export default {
   name:"SignInButton",
   methods: {
@@ -14,7 +15,8 @@ export default {
           this.loging = false
           this.user = getLastUser();
           this.text = 'Signed in as ' + this.user.name;
-          this.$emit('userChanged', this.user)
+          this.setUser(this.user);
+
         }
       }
     }
@@ -26,6 +28,17 @@ export default {
       user:null,
       text:'Not yet logged-in',
     }
-  }
+  },
+  setup() {
+    const store = useStore();
+
+    const setUser = (user) => {
+      store.commit('SET_USER', user);
+    };
+
+    return {
+      setUser,
+    };
+  },
 }
 </script>
