@@ -2,13 +2,9 @@
   <base-button
     :disabled="isPending"
     :color="color"
-    @click.stop.prevent="handleClick"
+    v-on:click="handleClick"
   >
-    <font-awesome-icon
-      v-if="isPending"
-      :icon="['fas', 'circle-notch']"
-      pulse
-    />
+    <img v-if="isPending" src="../assets/loading.gif" style="height: 1%;width: 20%"/>
     <slot />
   </base-button>
 </template>
@@ -25,20 +21,26 @@ export default {
     color: {
       type: String,
       default: 'primary'
-    }
+    },
   },
 
   data () {
     return {
-      isPending: false
+      isPending: false,
+      nbclicks: 0
     }
   },
 
   methods: {
-    handleClick () {
-      const originalOnClick = /** @type {() => Promise<void>} */ (this.$attrs.onClick)
-      this.isPending = true
-      originalOnClick().finally(() => { this.isPending = false })
+    async handleClick () {
+      if(this.isPending===false) {
+        this.nbclicks=this.nbclicks+1;
+        console.log("pending");
+        this.isPending = true;
+        await new Promise(resolve => setTimeout(resolve, 1000+this.nbclicks*1000));
+        this.isPending=false;
+        console.log("found")
+      }
     }
   }
 }
