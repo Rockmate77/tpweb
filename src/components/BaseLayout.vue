@@ -13,6 +13,7 @@ import SignInButton from "@/components/SignInButton.vue";
 
 export default {
   name: 'BaseLayout',
+  inject: ['user'],
   components:{
     SignInButton,
     BaseFooter,
@@ -20,14 +21,8 @@ export default {
   },
   methods:{
     uchanged(data){
-      this.user=data;
       this.$emit('userChanged',data)
     }
   },
-  data() {
-    return {
-      user:null,
-    }
-  }
 }
 </script>

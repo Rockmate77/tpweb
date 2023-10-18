@@ -25,6 +25,11 @@ export default {
     return {
       user:null,
     }
+  },
+  provide() {
+    return {
+      user: this.user,
+    };
   }
 }
 </script>

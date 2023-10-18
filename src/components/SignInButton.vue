@@ -26,6 +26,6 @@ export default {
       user:null,
       text:'Not yet logged-in',
     }
-  },
+  }
 }
 </script>
