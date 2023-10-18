@@ -1,18 +1,15 @@
 <template>
     <BaseLayout>
-    <home-page />
+    <router-view/>
     </BaseLayout>
 </template>
 
 <script>
-
-import HomePage from "@/pages/HomePage.vue";
 import BaseLayout from "@/components/BaseLayout.vue";
 export default {
   name: 'App',
   components: {
     BaseLayout,
-    HomePage
   }
 }
 </script>
