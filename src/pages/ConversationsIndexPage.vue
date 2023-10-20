@@ -1,7 +1,19 @@
 <template>
-  <div style="height: 90vh">
-    <p>Here Comes the content of the Conversation Index page</p>
+  <div style="height: 92vh">
+    <h2>Conversation Details</h2>
+    <p>Conversation ID: {{ conversationId }}</p>
   </div>
 </template>
-<script setup>
+
+<script>
+export default {
+  data() {
+    return {
+      conversationId: null,
+    };
+  },
+  mounted() {
+    this.conversationId = this.$route.params.id;
+  },
+};
 </script>

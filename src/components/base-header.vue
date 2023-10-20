@@ -2,11 +2,12 @@
   <nav class=" navbar_custom navbar navbar-expand-lg bg-body-tertiary" >
     <div class="container-fluid" style="background-color: #42b883">
       <router-link to="/"><BaseButton class="navbar-brand">Home</BaseButton></router-link>
-      <router-link to="/conv"><BaseButton class="navbar-brand">Conversation</BaseButton></router-link>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="ml-auto">
+        <router-link to="/conversations/1"><BaseButton class="navbar-brand">Conversation</BaseButton></router-link>
         <slot></slot>
       </div>
     </div>

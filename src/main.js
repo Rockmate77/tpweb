@@ -7,7 +7,7 @@ import store from '@/lib/store'
 const routes = [
     { path: '/', component: homePage },
     {
-        path: '/conv',
+        path: '/conversations/:id',
         name: 'Conv',
         component: ConversationsIndexPage,
         // Add a beforeEnter guard to check if user is null
